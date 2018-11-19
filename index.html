@@ -3,14 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Game Stat</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 * {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; padding: 0px; margin: 0px;}
+td {border-collapse:collapse;border-spacing:0;border:none; font-size:24px;font-family: Verdana, monospace !important;;text-align:left;vertical-align:top; text-shadow: white 1px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;}
 .tg {font-size:28px;font-family: Verdana, monospace  !important;;text-align:left;vertical-align:top}
-td {border-collapse:collapse;border-spacing:0;border:none; font-size:24px;font-family: Verdana2, monospace !important;;text-align:left;vertical-align:top; text-shadow: white 1px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;}
-#clicks_0 {width: 32px; text-align: center; }
-#clicks_1 {width: 32px; text-align: center; }
-#clicks_2 {width: 32px; text-align: center; }
+.clicks {width: 32px; text-align: center; }
 .quadrat {text-shadow: none; position: relative; width: 42px; height: 42px; margin: 1px; text-align: center; vertical-align: middle; }
 </style>
 </head>
@@ -35,10 +32,8 @@ td {border-collapse:collapse;border-spacing:0;border:none; font-size:24px;font-f
         </div>
     </td></tr>
     <tr>
-      <td id="clicks_0">0</td><td>-</td><td id="clicks_1">0</td><td>-</td><td id="clicks_2">0</td>
+      <td class="clicks" id="clicks_0">0</td><td>-</td><td class="clicks" id="clicks_1">0</td><td>-</td><td class="clicks" id="clicks_2">0</td>
     </tr>
     </table>
-    <div style="height: 100%; width:200px; font-size: 28pt; display: flex; text-align: center; ">
-    </div>
 </body>
 </html>
