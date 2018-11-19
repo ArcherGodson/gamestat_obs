@@ -7,9 +7,8 @@
 @font-face { font-family: BigNoodle; src: url('big_noodle_titling.ttf'); } 
  
 * {font-family: BigNoodle; font-size: 24pt; background-color: #000; color: #fff; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; padding: 0px; margin: 0px;}
-td {border-collapse:collapse;border-spacing:0;border:none; font-size:24px;font-family: BigNoodle, monospace !important;;text-align:right;vertical-align:top; text-shadow: white 1px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;}
 .tg {font-size:28px;font-family: BigNoodle, monospace  !important;;text-align:left;vertical-align:top}
-.clicks {display:inline-block; max-width: 22px; text-align: right; }
+.clicks {display:inline-block; min-width: 20px; text-align: center; padding: 4px;}
 </style>
 </head>
 <body>
@@ -29,9 +28,9 @@ td {border-collapse:collapse;border-spacing:0;border:none; font-size:24px;font-f
 -->
     <div style="width:200px; float: left; text-align: right; ">
     <div class="clicks" id="clicks_0" onclick="onClick(0, 1)" oncontextmenu="javascript:onClick(0, -1); return false;">0</div>
-    <div class="clicks">-</div>
+    <div style="display:inline-block;">-</div>
     <div class="clicks" id="clicks_1" onclick="onClick(1, 1)" oncontextmenu="javascript:onClick(1, -1); return false;">0</div>
-    <div class="clicks">-</div>
+    <div style="display:inline-block;">-</div>
     <div class="clicks" id="clicks_2" onclick="onClick(2, 1)" oncontextmenu="javascript:onClick(2, -1); return false;">0</div>
     </div>
 
