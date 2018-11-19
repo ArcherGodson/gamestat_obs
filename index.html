@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Game Stat</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+* {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; padding: 0px; margin: 0px;}
+.tg {font-size:28px;font-family: Verdana, monospace  !important;;text-align:left;vertical-align:top}
+td {border-collapse:collapse;border-spacing:0;border:none; font-size:24px;font-family: Verdana2, monospace !important;;text-align:left;vertical-align:top; text-shadow: white 1px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;}
+#clicks_0 {width: 32px; text-align: center; }
+#clicks_1 {width: 32px; text-align: center; }
+#clicks_2 {width: 32px; text-align: center; }
+.quadrat {text-shadow: none; position: relative; width: 42px; height: 42px; margin: 1px; text-align: center; vertical-align: middle; }
+</style>
+</head>
+<body>
+    <script>
+    var clicks = [0, 0, 0];
+    function onClick(col, addi) {
+        var d = new Date();
+        var now = d.getFullYear()+"-"+("0"+d.getMonth()+1).slice(-2)+"-"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)+"."+("00"+d.getMilliseconds()).slice(-3)
+        clicks[col] += addi;
+        console.log(now, col, clicks[col])
+        document.getElementById("clicks_"+col).innerHTML = clicks[col];
+    };
+    </script>
+    <table class="tg" style="width:120px">
+    <tr><td colspan="5">
+        <div style="height: 100%; width:100%; font-size: 28pt; display: flex; ">
+            <div class="quadrat" style="background-color: green; " id="green" onclick="onClick(0, 1)" oncontextmenu="javascript:onClick(0, -1); return false;">W</div>
+            <div class="quadrat" style="background-color: red;   " id="red"   onclick="onClick(1, 1)" oncontextmenu="javascript:onClick(1, -1); return false;">L</div>
+            <div class="quadrat" style="background-color: gray;  " id="gray"  onclick="onClick(2, 1)" oncontextmenu="javascript:onClick(2, -1); return false;">D</div>
+        </div>
+    </td></tr>
+    <tr>
+      <td id="clicks_0">0</td><td>-</td><td id="clicks_1">0</td><td>-</td><td id="clicks_2">0</td>
+    </tr>
+    </table>
+    <div style="height: 100%; width:200px; font-size: 28pt; display: flex; text-align: center; ">
+    </div>
+</body>
+</html>
