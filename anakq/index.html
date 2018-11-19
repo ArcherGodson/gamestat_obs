@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Game Stat | Profile#0001</title>
+<style>
+* {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; padding: 0px; margin: 0px;}
+td {border-collapse:collapse;border-spacing:0;border:none; font-size:24px;font-family: Verdana, monospace !important;;text-align:left;vertical-align:top; text-shadow: white 1px 1px 0, white -1px -1px 0, white -1px 1px 0, white 1px -1px 0;}
+.tg {font-size:28px;font-family: Verdana, monospace  !important;;text-align:left;vertical-align:top}
+.clicks {width: 32px; text-align: center; }
+.quadrat {text-shadow: none; position: relative; width: 42px; height: 42px; margin: 1px; text-align: center; vertical-align: middle; }
+</style>
+</head>
+<body>
+    <script>
+    var clicks = [0, 0, 0];
+    var letters = {0: "W", 1: "L", 2: "D"};
+    function onClick(col, addi) {
+        var d = new Date();
+        var now = d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)+"."+("00"+d.getMilliseconds()).slice(-3)
+        clicks[col] += addi;
+        console.log(now, letters[col], clicks[0]+"-"+clicks[1]+"-"+clicks[2])
+        document.getElementById("clicks_"+col).innerHTML = clicks[col];
+    };
+    </script>
+    <table class="tg" style="width:120px">
+    <tr>
+      <td class="clicks" id="clicks_0" onclick="onClick(0, 1)" oncontextmenu="javascript:onClick(0, -1); return false;">0</td>
+      <td>-</td>
+      <td class="clicks" id="clicks_1" onclick="onClick(1, 1)" oncontextmenu="javascript:onClick(1, -1); return false;">0</td>
+      <td>-</td>
+      <td class="clicks" id="clicks_2" onclick="onClick(2, 1)" oncontextmenu="javascript:onClick(2, -1); return false;">0</td>
+    </tr>
+    </table>
+</body>
+</html>
