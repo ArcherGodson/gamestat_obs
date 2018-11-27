@@ -9,7 +9,7 @@
 * {font-family: BigNoodle; font-size: 24pt; color: #fff; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; padding: 0px; margin: 0px;}
   body { background-color: #000; }  
 .tg {font-size:28px;font-family: BigNoodle, monospace  !important;;text-align:left;vertical-align:top}
-div {float: right}
+div {float: left}
 </style>
 </head>
 <body>
@@ -24,10 +24,12 @@ div {float: right}
         document.getElementById("clicks_"+col).innerHTML = clicks[col];
     };
     </script>
+	<div style="float: right">
     <div id="clicks_0" onclick="onClick(0, 1)" oncontextmenu="javascript:onClick(0, -1); return false;">0</div>
     <div>-</div>
     <div id="clicks_1" onclick="onClick(1, 1)" oncontextmenu="javascript:onClick(1, -1); return false;">0</div>
     <div>-</div>
     <div id="clicks_2" onclick="onClick(2, 1)" oncontextmenu="javascript:onClick(2, -1); return false;">0</div>
-</body>
+	</div>
+	</body>
 </html>
