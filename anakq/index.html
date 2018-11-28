@@ -11,6 +11,8 @@
 .tg {font-size:28px;font-family: BigNoodle, monospace  !important;;text-align:left;vertical-align:top}
 div {float: left}
 </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body>
     <script>
@@ -21,6 +23,16 @@ div {float: left}
         var now = d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)+"."+("00"+d.getMilliseconds()).slice(-3)
         clicks[col] += addi;
         console.log(now, letters[col], clicks[0]+"-"+clicks[1]+"-"+clicks[2])
+		$.ajax("http://www.archergodson.com/game/send.php", {
+			type: 'GET',
+			data: {
+				DateTine: now,
+				Letter: letters[col],
+				Score: clicks[0]+"-"+clicks[1]+"-"+clicks[2]
+			},
+			dataType: "json",
+			
+  })
         document.getElementById("clicks_"+col).innerHTML = clicks[col];
     };
     </script>
