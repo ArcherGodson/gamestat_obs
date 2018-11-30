@@ -18,6 +18,11 @@ div {float: left}
     <script>
     var clicks = [0, 0, 0];
     var letters = {0: "W", 1: "L", 2: "D"};
+	var sessionid = "";
+	function init() {
+		sessionid = Math.random().toString(36).substr(2, 9).toUpperCase();
+		console.log("Session: " + sessionid);
+	}
     function onClick(col, addi) {
         var d = new Date();
         var now = d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)+" "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)+"."+("00"+d.getMilliseconds()).slice(-3)
@@ -29,13 +34,15 @@ div {float: left}
 			data: {
 				DateTime: now,
 				Letter: letters[col],
-				Score: clicks[0]+"-"+clicks[1]+"-"+clicks[2]
+				Score: clicks[0]+"-"+clicks[1]+"-"+clicks[2],
+				SessionID: sessionid
 			},
 			dataType: "json",
 			
-  })
+			})
         document.getElementById("clicks_"+col).innerHTML = clicks[col];
     };
+	window.onload = init;
     </script>
 	<div style="float: right">
     <div id="clicks_0" onclick="onClick(0, 1)" oncontextmenu="javascript:onClick(0, -1); return false;">0</div>
